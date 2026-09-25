@@ -1,3 +1,5 @@
 <?php
 
-uses(JeffersonGoncalves\Filament\Carve\Tests\TestCase::class)->in('Feature');
+use JeffersonGoncalves\Filament\Carve\Tests\TestCase;
+
+uses(TestCase::class)->in('Feature');
