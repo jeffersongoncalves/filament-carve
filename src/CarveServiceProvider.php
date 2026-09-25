@@ -11,8 +11,6 @@ class CarveServiceProvider extends PackageServiceProvider
     {
         $package
             ->name('filament-carve')
-            ->hasConfigFile()
-            ->hasViews()
-            ->hasMigrations();
+            ->hasTranslations();
     }
 }
