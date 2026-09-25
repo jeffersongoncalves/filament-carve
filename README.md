@@ -1,8 +1,8 @@
 # Filament Carve
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/jeffersongoncalves/filament-carve.svg?style=flat-square)](https://packagist.org/packages/jeffersongoncalves/filament-carve)
-[![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/jeffersongoncalves/filament-carve/tests.yml?branch=2.x&label=tests&style=flat-square)](https://github.com/jeffersongoncalves/filament-carve/actions/workflows/tests.yml?query=branch%3A2.x)
-[![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/jeffersongoncalves/filament-carve/pint.yml?branch=2.x&label=code%20style&style=flat-square)](https://github.com/jeffersongoncalves/filament-carve/actions/workflows/pint.yml?query=branch%3A2.x)
+[![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/jeffersongoncalves/filament-carve/tests.yml?branch=3.x&label=tests&style=flat-square)](https://github.com/jeffersongoncalves/filament-carve/actions/workflows/tests.yml?query=branch%3A3.x)
+[![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/jeffersongoncalves/filament-carve/pint.yml?branch=3.x&label=code%20style&style=flat-square)](https://github.com/jeffersongoncalves/filament-carve/actions/workflows/pint.yml?query=branch%3A3.x)
 [![Total Downloads](https://img.shields.io/packagist/dt/jeffersongoncalves/filament-carve.svg?style=flat-square)](https://packagist.org/packages/jeffersongoncalves/filament-carve)
 [![License](https://img.shields.io/packagist/l/jeffersongoncalves/filament-carve.svg?style=flat-square)](LICENSE.md)
 
