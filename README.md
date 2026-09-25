@@ -1,6 +1,6 @@
 <div class="filament-hidden">
 
-![Filament Carve](https://raw.githubusercontent.com/jeffersongoncalves/filament-carve/2.x/art/jeffersongoncalves-filament-carve.png)
+![Filament Carve](https://raw.githubusercontent.com/jeffersongoncalves/filament-carve/3.x/art/jeffersongoncalves-filament-carve.png)
 
 </div>
 
