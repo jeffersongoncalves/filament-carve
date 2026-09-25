@@ -1,4 +1,12 @@
+<div class="filament-hidden">
+
+![Filament Carve](https://raw.githubusercontent.com/jeffersongoncalves/filament-carve/2.x/art/jeffersongoncalves-filament-carve.png)
+
+</div>
+
 # Filament Carve
+
+[![Buy Me A Coffee](https://img.shields.io/badge/Buy%20Me%20A%20Coffee-support-FFDD00?style=flat-square&logo=buy-me-a-coffee&logoColor=black)](https://buymeacoffee.com/jeffersongoncalves)
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/jeffersongoncalves/filament-carve.svg?style=flat-square)](https://packagist.org/packages/jeffersongoncalves/filament-carve)
 [![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/jeffersongoncalves/filament-carve/tests.yml?branch=3.x&label=tests&style=flat-square)](https://github.com/jeffersongoncalves/filament-carve/actions/workflows/tests.yml?query=branch%3A3.x)
