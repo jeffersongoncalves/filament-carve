@@ -14,7 +14,7 @@
 [![Total Downloads](https://img.shields.io/packagist/dt/jeffersongoncalves/filament-carve.svg?style=flat-square)](https://packagist.org/packages/jeffersongoncalves/filament-carve)
 [![License](https://img.shields.io/packagist/l/jeffersongoncalves/filament-carve.svg?style=flat-square)](LICENSE.md)
 
-[Carve](https://markup-carve.github.io/carve/) markup for Filament, built on [jeffersongoncalves/laravel-carve](https://github.com/jeffersongoncalves/laravel-carve):
+[Carve](https://markup-carve.github.io/carve/) markup for Filament, built on the official Laravel bridge [markup-carve/laravel-carve](https://github.com/markup-carve/laravel-carve):
 
 - `CarveEditor`: a textarea that validates Carve source and previews the rendered HTML in a modal.
 - `CarveEntry`: an infolist entry that renders Carve source as HTML.
@@ -36,11 +36,19 @@ You can install the package via composer:
 composer require jeffersongoncalves/filament-carve
 ```
 
-Rendering is configured by laravel-carve. Publish its config to change the render profiles (`default`, `comment`, `trusted`, ...):
+Rendering is configured by laravel-carve. Publish its config to change the render profiles under `converters` (`default`, `comment`, `trusted`, ...):
 
 ```bash
 php artisan vendor:publish --tag="carve-config"
 ```
+
+### Upgrading from `jeffersongoncalves/laravel-carve`
+
+Earlier releases were built on `jeffersongoncalves/laravel-carve`, which is abandoned in favor of `markup-carve/laravel-carve`. If your app uses it directly:
+
+- Replace `jeffersongoncalves/laravel-carve` with `markup-carve/laravel-carve` in your `composer.json`.
+- Rename imports from `JeffersonGoncalves\Carve\` to `MarkupCarve\LaravelCarve\` (`Facades\Carve`, `Rules\ValidCarve`, `Casts\AsCarve`, `RenderedCarve`).
+- Republish `config/carve.php` and move your profiles from the `profiles` key to `converters`.
 
 ## Usage
 

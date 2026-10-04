@@ -2,7 +2,7 @@
 
 namespace JeffersonGoncalves\Filament\Carve\Concerns;
 
-use JeffersonGoncalves\Carve\RenderedCarve;
+use MarkupCarve\LaravelCarve\RenderedCarve;
 
 trait HasCarveSource
 {
