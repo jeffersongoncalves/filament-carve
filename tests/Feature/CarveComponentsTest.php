@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\HtmlString;
+use JeffersonGoncalves\Carve\Facades\Carve;
 use JeffersonGoncalves\Carve\Rules\ValidCarve;
 use JeffersonGoncalves\Filament\Carve\Forms\Components\CarveEditor;
 use JeffersonGoncalves\Filament\Carve\Infolists\Components\CarveEntry;
@@ -46,4 +47,18 @@ it('uses the given profile', function () {
     $html = (string) CarveEntry::make('body')->profile('comment')->formatState('<b>raw</b>');
 
     expect($html)->not->toContain('<b>');
+});
+
+it('renders cast values from their source using the component profile', function () {
+    $rendered = Carve::render('Some *bold* text');
+
+    expect((string) CarveEntry::make('body')->formatState($rendered))
+        ->toContain('<strong>bold</strong>')->not->toContain('&lt;strong&gt;')
+        ->and(CarveColumn::make('body')->formatState($rendered))->toBe('Some bold text')
+        ->and((string) CarveColumn::make('body')->html()->formatState($rendered))->toContain('<strong>bold</strong>');
+
+    $trusted = Carve::render("```=html\n<script>alert(1)</script>\n```", 'trusted');
+
+    expect((string) CarveEntry::make('body')->profile('comment')->formatState($trusted))->not->toContain('<script>')
+        ->and((string) CarveColumn::make('body')->html()->profile('comment')->formatState($trusted))->not->toContain('<script>');
 });

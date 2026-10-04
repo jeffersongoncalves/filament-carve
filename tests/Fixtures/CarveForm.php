@@ -18,9 +18,12 @@ class CarveForm extends Component implements HasActions, HasSchemas
     /** @var array<string, mixed> */
     public ?array $data = [];
 
-    public function mount(): void
+    public ?CarvePost $record = null;
+
+    public function mount(?CarvePost $record = null): void
     {
-        $this->form->fill();
+        $this->record = $record;
+        $this->form->fill($record === null ? [] : ['body' => $record->body]);
     }
 
     public function form(Schema $schema): Schema
@@ -34,7 +37,11 @@ class CarveForm extends Component implements HasActions, HasSchemas
 
     public function save(): void
     {
-        $this->form->getState();
+        $data = $this->form->getState();
+        if ($this->record !== null) {
+            $this->record->body = $data['body'];
+            $this->record->save();
+        }
     }
 
     public function render(): string
