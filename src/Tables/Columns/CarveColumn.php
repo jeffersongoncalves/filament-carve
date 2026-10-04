@@ -4,9 +4,9 @@ namespace JeffersonGoncalves\Filament\Carve\Tables\Columns;
 
 use Filament\Tables\Columns\TextColumn;
 use Illuminate\Support\HtmlString;
-use JeffersonGoncalves\Carve\Facades\Carve;
 use JeffersonGoncalves\Filament\Carve\Concerns\HasCarveProfile;
 use JeffersonGoncalves\Filament\Carve\Concerns\HasCarveSource;
+use MarkupCarve\LaravelCarve\Facades\Carve;
 
 /**
  * Shows the source as plain text (works with ->limit() and ->words()),
@@ -29,7 +29,7 @@ class CarveColumn extends TextColumn
 
             return $this->isHtml()
                 ? new HtmlString(Carve::toHtml((string) $state, $this->getProfile()))
-                : Carve::toText((string) $state, $this->getProfile());
+                : rtrim(Carve::toText((string) $state, $this->getProfile()));
         });
     }
 }

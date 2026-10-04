@@ -4,9 +4,9 @@ namespace JeffersonGoncalves\Filament\Carve\Infolists\Components;
 
 use Filament\Infolists\Components\TextEntry;
 use Illuminate\Support\HtmlString;
-use JeffersonGoncalves\Carve\Facades\Carve;
 use JeffersonGoncalves\Filament\Carve\Concerns\HasCarveProfile;
 use JeffersonGoncalves\Filament\Carve\Concerns\HasCarveSource;
+use MarkupCarve\LaravelCarve\Facades\Carve;
 
 class CarveEntry extends TextEntry
 {

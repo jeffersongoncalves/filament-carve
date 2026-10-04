@@ -3,7 +3,7 @@
 namespace JeffersonGoncalves\Filament\Carve\Tests\Fixtures;
 
 use Illuminate\Database\Eloquent\Model;
-use JeffersonGoncalves\Carve\Casts\AsCarve;
+use MarkupCarve\LaravelCarve\Casts\AsCarve;
 
 class CarvePost extends Model
 {
