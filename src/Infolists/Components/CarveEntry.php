@@ -6,10 +6,12 @@ use Filament\Infolists\Components\TextEntry;
 use Illuminate\Support\HtmlString;
 use JeffersonGoncalves\Carve\Facades\Carve;
 use JeffersonGoncalves\Filament\Carve\Concerns\HasCarveProfile;
+use JeffersonGoncalves\Filament\Carve\Concerns\HasCarveSource;
 
 class CarveEntry extends TextEntry
 {
     use HasCarveProfile;
+    use HasCarveSource;
 
     protected function setUp(): void
     {
@@ -17,8 +19,10 @@ class CarveEntry extends TextEntry
 
         $this->prose();
 
-        $this->formatStateUsing(fn (mixed $state): ?HtmlString => blank($state)
-            ? null
-            : new HtmlString(Carve::toHtml((string) $state, $this->getProfile())));
+        $this->formatStateUsing(function (mixed $state): ?HtmlString {
+            $source = $this->getCarveSource($state);
+
+            return $source === null ? null : new HtmlString(Carve::toHtml($source, $this->getProfile()));
+        });
     }
 }
