@@ -26,7 +26,7 @@ CarveEditor::make('body')
     ->previewable(false); // hide the "Preview" hint action
 ```
 
-The source is always validated with `JeffersonGoncalves\Carve\Rules\ValidCarve`. `getCarveRule()` returns the configured rule.
+The source is always validated with `MarkupCarve\LaravelCarve\Rules\ValidCarve`. `getCarveRule()` returns the configured rule.
 
 ## Infolist entry
 
@@ -49,13 +49,13 @@ CarveColumn::make('body')->html();    // HTML via Carve::toHtml()
 
 ## Profiles
 
-Profiles live in laravel-carve's `config/carve.php` (`php artisan vendor:publish --tag="carve-config"`). The published config ships `default` (safe), `comment` (strict safe mode, comment preset) and `trusted` (no safe mode).
+Profiles live under `converters` in laravel-carve's `config/carve.php` (`php artisan vendor:publish --tag="carve-config"`). The published config ships `default` (safe), `comment` (strict safe mode, comment preset) and `trusted` (no safe mode).
 
 ## Troubleshooting
 
-### `Carve profile "x" is not defined`
+### `Carve converter "x" not found`
 
-**Cause**: `profile()` names a profile missing from `carve.profiles`.
+**Cause**: `profile()` names a profile missing from `carve.converters`.
 
 **Solution**: Add the profile to `config/carve.php` or use an existing one.
 

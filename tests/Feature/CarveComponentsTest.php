@@ -2,11 +2,11 @@
 
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\HtmlString;
-use JeffersonGoncalves\Carve\Facades\Carve;
-use JeffersonGoncalves\Carve\Rules\ValidCarve;
 use JeffersonGoncalves\Filament\Carve\Forms\Components\CarveEditor;
 use JeffersonGoncalves\Filament\Carve\Infolists\Components\CarveEntry;
 use JeffersonGoncalves\Filament\Carve\Tables\Columns\CarveColumn;
+use MarkupCarve\LaravelCarve\Facades\Carve;
+use MarkupCarve\LaravelCarve\Rules\ValidCarve;
 
 it('builds the carve validation rule from the editor options', function () {
     $rule = CarveEditor::make('body')->preset('comment')->getCarveRule();

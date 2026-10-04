@@ -12,10 +12,10 @@ use Filament\Notifications\NotificationsServiceProvider;
 use Filament\Schemas\SchemasServiceProvider;
 use Filament\Support\SupportServiceProvider;
 use Filament\Tables\TablesServiceProvider;
-use JeffersonGoncalves\Carve\CarveServiceProvider as LaravelCarveServiceProvider;
 use JeffersonGoncalves\Filament\Carve\CarveServiceProvider;
 use JeffersonGoncalves\Filament\Carve\Tests\Fixtures\TestPanelProvider;
 use Livewire\LivewireServiceProvider;
+use MarkupCarve\LaravelCarve\LaravelCarveServiceProvider;
 use Orchestra\Testbench\TestCase as Orchestra;
 use RyanChandler\BladeCaptureDirective\BladeCaptureDirectiveServiceProvider;
 
