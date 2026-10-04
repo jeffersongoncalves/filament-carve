@@ -9,10 +9,12 @@ use Illuminate\Support\HtmlString;
 use JeffersonGoncalves\Carve\Facades\Carve;
 use JeffersonGoncalves\Carve\Rules\ValidCarve;
 use JeffersonGoncalves\Filament\Carve\Concerns\HasCarveProfile;
+use JeffersonGoncalves\Filament\Carve\Concerns\HasCarveSource;
 
 class CarveEditor extends Textarea
 {
     use HasCarveProfile;
+    use HasCarveSource;
 
     protected string|Closure|null $carvePreset = null;
 
@@ -22,11 +24,23 @@ class CarveEditor extends Textarea
 
     protected bool|Closure $isPreviewable = true;
 
+    public function mutateStateForValidation(mixed $state): mixed
+    {
+        return parent::mutateStateForValidation($this->getCarveSource($state));
+    }
+
+    public function mutatesStateForValidation(): bool
+    {
+        return true;
+    }
+
     protected function setUp(): void
     {
         parent::setUp();
 
         $this->rows(10);
+
+        $this->afterStateHydrated(fn (CarveEditor $component, mixed $state) => $component->state($component->getCarveSource($state)));
 
         $this->rule(fn (CarveEditor $component): ValidCarve => $component->getCarveRule());
 
@@ -113,7 +127,7 @@ class CarveEditor extends Textarea
 
     public function renderPreview(): string
     {
-        $state = $this->getState();
+        $state = $this->getCarveSource($this->getState());
 
         return blank($state) ? '' : Carve::toHtml((string) $state, $this->getProfile());
     }
